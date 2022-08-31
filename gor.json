@@ -1,0 +1,16 @@
+{
+    "attributes": [
+      {
+        "trait_type": "Breed",
+        "value": "Maltipoo"
+      },
+      {
+        "trait_type": "Eye color",
+        "value": "Mocha"
+      }
+    ],
+    "description": "Bold Gorilla's Now Riding Bikes.",
+    "image": "https://ipfs.io/ipfs/QmPpLaDmHoYo1AEG8m2Pa2UfubMoWyUPpdqL3TGrzxe3kx",
+    "name": "Smart Gorilla"
+  }
+  
