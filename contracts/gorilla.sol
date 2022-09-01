@@ -10,10 +10,18 @@ contract ElonGorilla is ERC721, ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIdCounter;
+    uint256 TOTAL_SUPPLY;
+     uint256 _tokenId; 
 
-    constructor() ERC721("ElonGorilla", "GOR") {}
+    constructor() ERC721("ElonGorilla", "GOR") {
+        TOTAL_SUPPLY = 999;
+    }
+    modifier maxMintExceeded() {
+        require(_tokenId <= TOTAL_SUPPLY, "Maximum Mint Exceeded" );
+        _;
+    }
 
-    function safeMint(address to, string memory uri) public onlyOwner {
+    function safeMint(address to, string memory uri) public onlyOwner  maxMintExceeded {
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
